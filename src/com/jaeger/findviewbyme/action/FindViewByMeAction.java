@@ -70,7 +70,7 @@ public class FindViewByMeAction extends BaseGenerateAction {
         ActionUtil.switchAddM(viewParts, PropertiesComponent.getInstance().getBoolean(PropertiesKey.SAVE_ADD_M_ACTION, false));
         isTarget26 = PropertiesComponent.getInstance().getBoolean(PropertiesKey.IS_TARGET_26, false);
         updateTable();
-        findViewDialog.setTitle("FindViewByMe");
+        findViewDialog.setTitle("FindViewByMeKt");
         findViewDialog.btnCopyCode.setText("OK");
         findViewDialog.setOnClickListener(onClickListener);
         findViewDialog.pack();

@@ -1,7 +1,7 @@
 <idea-plugin version="2">
     <id>com.jaeger.findviewbyme</id>
-    <name>FindViewByMe</name>
-    <version>1.4.0</version>
+    <name>FindViewByMeKt</name>
+    <version>1.4.1</version>
     <vendor email="chjie.jaeger@gmail.com" url="http://laobie.github.io">Jaeger</vendor>
 
     <description><![CDATA[
@@ -25,16 +25,16 @@
     </extensions>
 
     <actions>
-        <action id="AutoFindView" class="com.jaeger.findviewbyme.action.FindViewByMeAction" text="_FindViewByMe">
+        <action id="AutoFindView" class="com.jaeger.findviewbyme.action.FindViewByMeAction" text="_FindViewByMeKt">
             <add-to-group group-id="GenerateGroup"/>
-            <keyboard-shortcut keymap="$default" first-keystroke="ctrl Y"/>
+            <!--<keyboard-shortcut keymap="$default" first-keystroke="ctrl Y"/>-->
         </action>
     </actions>
 
     <actions>
-        <action id="AutoFindView_xml" class="com.jaeger.findviewbyme.action.FindViewByMeXmlAction" text="_FindViewByMe (xml)">
+        <action id="AutoFindView_xml" class="com.jaeger.findviewbyme.action.FindViewByMeXmlAction" text="_FindViewByMeKt (xml)">
             <add-to-group group-id="XmlGenerateToolsGroup" anchor="before" relative-to-action="GenerateDTD"/>
-            <keyboard-shortcut keymap="$default" first-keystroke="ctrl Y"/>
+            <!--<keyboard-shortcut keymap="$default" first-keystroke="ctrl Y"/>-->
         </action>
     </actions>
 

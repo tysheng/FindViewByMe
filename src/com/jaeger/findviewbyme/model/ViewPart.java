@@ -12,14 +12,14 @@ import java.util.regex.Pattern;
  */
 public class ViewPart {
 
-    private static final String OUTPUT_DECLARE_STRING = "private %s %s;\n";
+    private static final String OUTPUT_DECLARE_STRING = "private lateinit var %2$s: %1$s\n";
     private static final String OUTPUT_DECLARE_STRING_NOT_PRIVATE = "%s %s;\n";
 
     private static final String OUTPUT_FIND_VIEW_STRING = "%s = (%s) findViewById(R.id.%s);\n";
-    private static final String OUTPUT_FIND_VIEW_STRING_TARGET26 = "%s = findViewById(R.id.%s);\n";
+    private static final String OUTPUT_FIND_VIEW_STRING_TARGET26 = "%s = findViewById(R.id.%s)\n";
 
     private static final String OUTPUT_FIND_VIEW_STRING_WITH_ROOT_VIEW = "%s = (%s) %s.findViewById(R.id.%s);\n";
-    private static final String OUTPUT_FIND_VIEW_STRING_WITH_ROOT_VIEW_TARGET26 = "%s = %s.findViewById(R.id.%s);\n";
+    private static final String OUTPUT_FIND_VIEW_STRING_WITH_ROOT_VIEW_TARGET26 = "%s = %s.findViewById(R.id.%s)\n";
 
     private static final String OUTPUT_FIND_VIEW_STRING_FOR_VIEW_HOLDER = "viewHolder.%s = (%s) %s.findViewById(R.id.%s);\n";
     private static final String OUTPUT_FIND_VIEW_STRING_FOR_VIEW_HOLDER_TARGET26 = "viewHolder.%s = %s.findViewById(R.id.%s);\n";

@@ -64,7 +64,7 @@ public class FindViewByMeXmlAction extends AnAction {
         ActionUtil.switchAddM(viewParts, PropertiesComponent.getInstance().getBoolean(PropertiesKey.SAVE_ADD_M_ACTION, false));
         isTarget26 = PropertiesComponent.getInstance().getBoolean(PropertiesKey.IS_TARGET_26, false);
         updateTable();
-        findViewDialog.setTitle("FindViewByMe in XML");
+        findViewDialog.setTitle("FindViewByMeKt in XML");
         findViewDialog.setOnClickListener(onClickListener);
         findViewDialog.pack();
         findViewDialog.setLocationRelativeTo(WindowManager.getInstance().getFrame(anActionEvent.getProject()));
