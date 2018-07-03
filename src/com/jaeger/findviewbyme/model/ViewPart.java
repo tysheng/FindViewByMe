@@ -24,6 +24,8 @@ public class ViewPart {
     private static final String OUTPUT_FIND_VIEW_STRING_FOR_VIEW_HOLDER = "viewHolder.%s = (%s) %s.findViewById(R.id.%s);\n";
     private static final String OUTPUT_FIND_VIEW_STRING_FOR_VIEW_HOLDER_TARGET26 = "viewHolder.%s = %s.findViewById(R.id.%s);\n";
 
+    private static final String KT_UNSAFE_FIND = "private val %s by unsafeLazy { findViewById<%s>(R.id.%s) }";
+    private static final String KT_UNSAFE_FIND_WITH_ROOT = "private val %s by unsafeLazy { %s.findViewById<%s>(R.id.%s) }";
     private String type;
     private String typeFull;
     private String id;
@@ -121,6 +123,16 @@ public class ViewPart {
         return String.format(OUTPUT_FIND_VIEW_STRING_WITH_ROOT_VIEW, name, type, rootView, id);
     }
 
+    public String getFindViewStringWithRootViewKt(String rootView, boolean isTarget26) {
+
+        return String.format(KT_UNSAFE_FIND_WITH_ROOT, name, rootView,type,  id);
+    }
+
+    public String getFindViewStringKt(boolean isTarget26) {
+
+        return String.format(KT_UNSAFE_FIND, name, type, id);
+    }
+
     public String getFindViewString(boolean isTarget26) {
         if (isTarget26)
             return String.format(OUTPUT_FIND_VIEW_STRING_TARGET26, name, id);
@@ -143,6 +155,13 @@ public class ViewPart {
         return String.format(OUTPUT_FIND_VIEW_STRING_FOR_VIEW_HOLDER, name, type, rootView, id);
     }
 
+
+    public String getFindViewStringForViewHolderKt(String rootView, boolean isTarget26) {
+        if (isTarget26)
+            return String.format(OUTPUT_FIND_VIEW_STRING_FOR_VIEW_HOLDER_TARGET26, name, rootView, id);
+
+        return String.format(OUTPUT_FIND_VIEW_STRING_FOR_VIEW_HOLDER, name, type, rootView, id);
+    }
 
     @Override
     public String toString() {
